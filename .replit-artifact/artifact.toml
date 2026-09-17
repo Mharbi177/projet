@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Tasnim — Interactive Letter"
+description = "A private, cinematic digital letter for Tasnim, designed as a quiet mobile-first story with gentle transitions and no pressure."
+version = "1.0.0"
+id = "artifacts/tasnim-letter"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24294
+
+[services.development]
+run = "pnpm --filter @workspace/tasnim-letter run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tasnim-letter", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/tasnim-letter/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24294"
+BASE_PATH = "/"
