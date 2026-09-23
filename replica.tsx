@@ -28,12 +28,16 @@ type Chapter = {
 
 const chapters: Chapter[] = [
   { kind: "intro", icon: Gift, theme: "14 45% 25%", themeAlt: "157 20% 20%" },
-  { label: "01 — The Beginning", kind: "chapter-1", icon: Clock3, theme: "41 35% 20%", themeAlt: "14 35% 20%" },
-  { label: "02 — The Journey", kind: "chapter-2", icon: Eye, theme: "201 30% 15%", themeAlt: "220 25% 15%" },
-  { label: "03 — The Discovery", kind: "chapter-3", icon: Telescope, theme: "220 30% 18%", themeAlt: "280 20% 20%" },
-  { label: "04 — The Challenge", kind: "chapter-4", icon: Wind, theme: "220 15% 12%", themeAlt: "240 10% 10%" },
-  { label: "05 — The Turning Point", kind: "chapter-5", icon: RotateCcw, theme: "41 25% 18%", themeAlt: "20 30% 22%" },
-  { label: "06 — The Conclusion", kind: "final", icon: Check, theme: "14 50% 25%", themeAlt: "41 40% 25%" },
+  { label: "01 — El Retour", kind: "return", icon: Clock3, theme: "41 35% 20%", themeAlt: "14 35% 20%" },
+  { label: "02 — El Timing", kind: "timing", icon: Eye, theme: "201 30% 15%", themeAlt: "220 25% 15%" },
+  { label: "03 — Li na3rfou", kind: "knowing", icon: Telescope, theme: "220 30% 18%", themeAlt: "280 20% 20%" },
+  { label: "04 — El Espace", kind: "space", icon: Wind, theme: "220 15% 12%", themeAlt: "240 10% 10%" },
+  { label: "05 — Ba3ed lespace", kind: "after-time", icon: RotateCcw, theme: "41 25% 18%", themeAlt: "20 30% 22%" },
+  { label: "06 — Ki sefert lKSA", kind: "ksa", icon: MapPin, theme: "204 25% 13%", themeAlt: "14 28% 12%" },
+  { label: "07 — EL ZEBDA", kind: "point", icon: Compass, theme: "14 40% 22%", themeAlt: "30 35% 20%" },
+  { label: "08 — juste pour clarifier", kind: "meta", icon: Sparkles, theme: "280 25% 20%", themeAlt: "320 25% 18%" },
+  { label: "09 — Bel Ra7a no pressure ", kind: "no-pressure", icon: Pause, theme: "157 25% 18%", themeAlt: "180 25% 16%" },
+  { kind: "final", icon: Check, theme: "14 50% 25%", themeAlt: "41 40% 25%" },
 ];
 
 function TypewriterText({ text, delay = 0 }: { text: string; delay?: number }) {
@@ -267,7 +271,11 @@ function ChapterActions({
         <span>Back</span>
       </button>
       {!isFinal && <ContinueButton onClick={onNext} />}
- function ChapterContent({
+    </nav>
+  );
+}
+
+function ChapterContent({
   chapter,
   finalRevealed,
   dismissed,
@@ -287,12 +295,12 @@ function ChapterActions({
               <Gift size={25} strokeWidth={1.35} />
             </span>
             <p className="intro-opening" data-testid="text-intro-opening">
-              Welcome to the Interactive Story
+              ahla bik, ay nshalah tkoun b5ir
             </p>
             <div className="intro-copy" data-testid="text-intro-copy">
-              <span>This is a template for creating</span>
-              <span>immersive, multi-chapter interactive experiences.</span>
-              <span>Let's explore what you can build.</span>
+              <span>w 7abit nzid nbereklek</span>
+              <span>5ater na3ref lmawdhou3 ken emahmchek yeser.</span>
+              <span>Fama 7keya 7abit nfassarhelek b shwaya b shwaya.</span>
             </div>
             <button
               className={`action-button intro-seal ${breaking ? "breaking" : ""}`}
@@ -310,7 +318,7 @@ function ChapterActions({
               }}
               type="button"
             >
-              <span>Begin Journey</span>
+              <span>N7ellou l7keya</span>
               <ArrowRight size={16} strokeWidth={1.7} />
             </button>
             <p className="swipe-hint" style={{ marginTop: '24px', fontSize: '13px', color: 'hsl(var(--paper-muted))', opacity: 0.6, animation: 'reveal-up 700ms 1400ms both' }}>
@@ -319,41 +327,214 @@ function ChapterActions({
           </div>
         </section>
       );
-    case "chapter-1":
-    case "chapter-2":
-    case "chapter-3":
-    case "chapter-4":
-    case "chapter-5":
+    case "return":
       return (
-        <section className="chapter" data-testid={`chapter-${chapter.kind}`}>
+        <section className="chapter" data-testid="chapter-return">
           <div className="chapter-content stack">
             <ChapterHeading chapter={chapter} />
             <p className="chapter-kicker">
-              This is the {chapter.label?.split(" — ")[1]}
+              Ba3d snin, Harbi rja3 y7eb ykallemek.
             </p>
-            <p className="display-line">You can replace this content</p>
+            <p className="display-line">5ater fama 7ajet fik b9aw m3ah.</p>
             <p className="muted-line">
-              with your own story, portfolio details, or presentation points.
+              Personnalité, 9iyam, jmel, tari9et t5amem, w barcha qualités
+              okhra. w déjà crush 9dim ....
             </p>
-            <div className="soft-card" data-testid={`card-${chapter.kind}`}>
-              <p>Add interactive elements like this card.</p>
+          </div>
+        </section>
+      );
+    case "timing":
+      return (
+        <section className="chapter" data-testid="chapter-timing">
+          <div className="chapter-content stack">
+            <ChapterHeading chapter={chapter} />
+            <p className="chapter-kicker">
+              Ama lezem zeda n9oullek el contexte kif ma houwa.
+            </p>
+            <p className="emphasis">Enti kont 5arja men relation sérieuse.</p>
+            <p>Fama barcha 7ajet fi mo5ek, w ma kontich fi période sehla.</p>
+            <p className="muted-line">
+              W ena fi nafs el wa9t kont n7awel net9areb menek w nefhem win
+              ynajem yemchi lmawdhou3.
+            </p>
+          </div>
+        </section>
+      );
+    case "knowing":
+      return (
+        <section className="chapter" data-testid="chapter-knowing">
+          <div className="chapter-content stack">
+            <ChapterHeading chapter={chapter} />
+            <p>
+              Bdit n3aref fik chwaya b chwaya. n7awel nefhem, w nraja3 rou7i fi
+              barcha details.
+            </p>
+            <div className="soft-card" data-testid="card-knowing">
+              <p>El 7keya b9at mahech wadh7a barcha.</p>
             </div>
             <button
               className="reveal-button"
-              data-testid={`button-reveal-${chapter.kind}`}
-              onClick={() => onReveal(chapter.kind)}
+              data-testid="button-reveal-knowing"
+              onClick={() => onReveal("knowing")}
               type="button"
             >
               <Eye size={15} strokeWidth={1.7} />
               <span>
-                {revealed[chapter.kind] ? "Revealed" : "Click to Reveal"}
+                {revealed.knowing ? "Wadh7et chwaya" : "Nchoufouha men dakhel"}
               </span>
             </button>
-            {revealed[chapter.kind] && (
-              <p className="reveal-note" data-testid={`text-reveal-${chapter.kind}`}>
-                <TypewriterText text="Hidden content can be revealed dynamically to engage the reader." />
+            {revealed.knowing && (
+              <p className="reveal-note" data-testid="text-reveal-knowing">
+                <TypewriterText text="Mouch kol 7aja testa7a9 ijeba fi wa9tha. Ama ena kont n7eb nefhem 9bal ma na3mel ay khotwa." />
               </p>
             )}
+          </div>
+        </section>
+      );
+    case "space":
+      return (
+        <section className="chapter" data-testid="chapter-space">
+          <div className="space-ripple-bg" aria-hidden="true" style={{ position: 'absolute', top: '50%', left: '50%', width: '300px', height: '300px', transform: 'translate(-50%, -50%)', pointerEvents: 'none', zIndex: -1 }}>
+            <div style={{ position: 'absolute', inset: 0, borderRadius: '50%', border: '2px solid hsl(var(--paper) / .05)', animation: 'space-ripple 4s ease-out infinite' }} />
+            <div style={{ position: 'absolute', inset: 0, borderRadius: '50%', border: '2px solid hsl(var(--paper) / .02)', animation: 'space-ripple 4s ease-out infinite 2s' }} />
+          </div>
+          <div className="chapter-content">
+            <ChapterHeading chapter={chapter} />
+            <div className="line-reveal">
+              <span className="display-line">
+                Ki 7assit elli l7keya mahech wadh7a,
+              </span>
+              <span className="display-line">jbedt ro7i.</span>
+            </div>
+            <div className="stack-tight" style={{ marginTop: "40px" }}>
+              <p>9olt na3ti espace lrou7i</p>
+              <p>w lik enti zeda.</p>
+              <p className="muted-line" style={{ marginTop: "16px" }}>
+                Wa9tha kont nraha decision logique.
+              </p>
+            </div>
+            <p className="bottom-note">
+              Bsh nchouf rou7i akther w nfhem chnowa n7eb.
+            </p>
+          </div>
+        </section>
+      );
+    case "after-time":
+      return (
+        <section className="chapter" data-testid="chapter-after-time">
+          <div className="chapter-content">
+            <ChapterHeading chapter={chapter} />
+            <p className="chapter-kicker">
+              Ama el wa9t t3adda, w ena zeda tfakkert akther.
+            </p>
+            <div className="phrase-list" data-testid="text-reflections">
+              <span>Fama barcha 7ajet kont na3refhom 3lik...</span>
+              <span>personnalité.</span>
+              <span>a5le9.</span>
+              <span>tari9et t5amem.</span>
+            </div>
+            <p>
+              W akther ma tfakkert, akther fhemt 9addeh enti personne importante
+              fi 7yeti peut être menesh fi nafs el stage mais hadhaka houwa la
+              vie en rose ..
+            </p>
+          </div>
+        </section>
+      );
+    case "ksa":
+      return (
+        <section className="chapter ksa-chapter" data-testid="chapter-ksa">
+          <div aria-hidden="true" className="ksa-sky">
+            <div className="shooting-star" style={{ position: 'absolute', top: '20%', right: '20%', width: '100px', height: '1px', background: 'linear-gradient(90deg, transparent, hsl(var(--paper)), transparent)', animation: 'shooting-star 6s ease-in infinite 2s' }} />
+          </div>
+          <div className="chapter-content ksa-copy">
+            <ChapterHeading chapter={chapter} />
+            <p>Ki choftek tawa, rabi sahalhlelk w bditi 7yet jdida fi KSA...</p>
+            <p className="ksa-strong">l7keya wallat 7a9i9iya akther.</p>
+            <div className="ksa-moment">
+              {!revealed.ksa ? (
+                <button
+                  className="reveal-button"
+                  data-testid="button-reveal-ksa"
+                  onClick={() => onReveal("ksa")}
+                  type="button"
+                >
+                  <MapPin size={15} strokeWidth={1.7} />
+                  <span>El moment elli fhemt fih</span>
+                </button>
+              ) : (
+                <p data-testid="text-reveal-ksa">
+                  <TypewriterText text="Ynajem ena zeda 3malt ghalta." />
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+      );
+    case "point":
+      return (
+        <section className="chapter" data-testid="chapter-point">
+          <div className="chapter-content stack">
+            <ChapterHeading chapter={chapter} />
+            <p>Ma n7ebbech nji n9olek elli kol chay ken ghalet.</p>
+            <p className="muted-line">W mouch n7eb nfar4 3lik 7atta chay.</p>
+            <p className="prominent">Ama ma n7ebbech zeda mba3ed n9oul:</p>
+            <p className="display-line accent-line">
+              ena li jbedt ro7i w ma7aweltch.
+            </p>
+            <p className="muted-line">
+              N7eb nchouf l7keya mara okhra, b sra7a akther.
+            </p>
+          </div>
+        </section>
+      );
+    case "meta":
+      return (
+        <section className="chapter" data-testid="chapter-meta">
+          <div className="chapter-content stack">
+            <ChapterHeading chapter={chapter} />
+            <p className="chapter-kicker">
+              W 9bal ma ywalli el klem sérieux barcha...
+            </p>
+            <div className="soft-card meta-card" data-testid="card-meta">
+              <p>
+                n9olek fil klem hedha bsh n7otlek fi mo5ek li ena rani kima
+                9otlek bekri manarach 9ritou el message wale ama menish bsh
+                nsaybek lghiri akeka
+              </p>
+            </div>
+            <button
+              className="reveal-button"
+              data-testid="button-reveal-meta"
+              onClick={() => onReveal("meta")}
+              type="button"
+            >
+              <Sparkles size={15} strokeWidth={1.7} />
+              <span>
+                {revealed.meta ? "Hakka a7la" : "El parenthèse mta3i"}
+              </span>
+            </button>
+            {revealed.meta && (
+              <p className="reveal-note" data-testid="text-reveal-meta">
+                <TypewriterText text="Mafama 7atta chy . Juste 7abit nfassarlek win ena wa9ef , normalement ta3ref" />
+              </p>
+            )}
+          </div>
+        </section>
+      );
+    case "no-pressure":
+      return (
+        <section className="chapter" data-testid="chapter-no-pressure">
+          <div className="chapter-content stack">
+            <ChapterHeading chapter={chapter} />
+            <p>Ama tawa enti fi 7yet jdida, fi new experience.</p>
+            <p className="prominent">
+              Ma n7ebbech men hedha kollou ta3mel 7atta décision.
+            </p>
+            <p className="muted-line">
+              Ma fama 7atta 7aja lezem tet7sem tawa. A9ra, khoudh nafas, w
+              khalli kol chay yemchi b wa9tou.
+            </p>
           </div>
         </section>
       );
@@ -362,18 +543,20 @@ function ChapterActions({
         <section className="chapter final-chapter" data-testid="chapter-final">
           <div className="chapter-content">
             <ChapterHeading chapter={chapter} />
-            <p className="final-lead">The End of the Template</p>
+            <p className="final-lead">El klem lkol fi phrase wa7da:</p>
             <p className="final-main">
-              Thank you for exploring this interactive experience.
+              n7eb n3awed nchouf l7keya kifesh temchi.
             </p>
-            <p className="final-signoff">Now make it your own.</p>
+            <p className="final-signoff">Mouch lezem ijeba tawa.</p>
             {finalRevealed && (
               <p className="final-reveal" data-testid="text-final-reveal">
-                ✨ Keep building great things ✨
+                w nchallah li fih l5ir ysir.
               </p>
             )}
             <p className="dismissed-message" data-testid="text-final-note">
-              This template provides a beautiful foundation with smooth animations, swipe gestures, and particle effects.
+              hanek a9ra w khw w hanek raka7 oumourek w a3tini el zebda 7atenti
+              bsh na3rfou loumour kifech, na3ref new experience w barsha mhemech
+              tw ama kima 9otlek man7ebech nendem wkhw
             </p>
             {!dismissed ? (
               <button
@@ -383,23 +566,20 @@ function ChapterActions({
                 type="button"
               >
                 <Check size={14} strokeWidth={1.8} />
-                <span>Finish</span>
+                <span>Khalliha houni</span>
               </button>
             ) : (
               <p
                 className="dismissed-message"
                 data-testid="text-dismissed-message"
               >
-                <TypewriterText text="Ready to create your next project." delay={200} />
+                <TypewriterText text="Tawa khoudh wa9tek. Ma fama 7atta pression." delay={200} />
               </p>
             )}
           </div>
         </section>
       );
     default:
-      return null;
-  }
-}ult:
       return null;
   }
 }
@@ -409,7 +589,7 @@ function Letter() {
   
   const [current, setCurrent] = useState(() => {
     try {
-      const saved = localStorage.getItem("interactive-story-chapter");
+      const saved = localStorage.getItem("tasnim-letter-chapter");
       if (saved) {
         const parsed = parseInt(saved, 10);
         if (!isNaN(parsed) && parsed > 0 && parsed < chapters.length) {
@@ -444,9 +624,9 @@ function Letter() {
   useEffect(() => {
     try {
       if (current === 0) {
-        localStorage.removeItem("interactive-story-chapter");
+        localStorage.removeItem("tasnim-letter-chapter");
       } else {
-        localStorage.setItem("interactive-story-chapter", current.toString());
+        localStorage.setItem("tasnim-letter-chapter", current.toString());
       }
     } catch (e) {}
   }, [current]);
@@ -547,7 +727,7 @@ function Letter() {
         <header className="topbar">
           <span className="wordmark">
             <BookOpen size={14} strokeWidth={1.6} aria-hidden="true" />
-            <span>Interactive Story</span>
+            <span>for Tasnim</span>
           </span>
           <div className="chapter-dots" style={{ display: 'flex', gap: '6px', alignItems: 'center', zIndex: 10 }}>
             {chapters.map((ch, idx) => (
