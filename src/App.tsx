@@ -142,7 +142,7 @@ export default function App() {
             animation: "fade-up 700ms 100ms both",
           }}
         >
-          This page is no longer available.
+          This page is no longer mawjouda.
         </h1>
 
         {/* Divider */}
@@ -167,7 +167,7 @@ export default function App() {
             animation: "fade-up 700ms 300ms both",
           }}
         >
-          The letter was written for a specific moment in time.
+          El 7keya et3addet wa9tha.
           <br />
           That moment has passed.
         </p>
@@ -185,7 +185,7 @@ export default function App() {
         >
           If you're here, you already know what it said.
           <br />
-          The question is what you do with that.
+          W ta3ref akther menni chnowa ta3mel.
         </p>
 
         {/* Footer tag */}
@@ -198,7 +198,9 @@ export default function App() {
             animation: "fade-up 700ms 600ms both",
           }}
         >
-          — M
+          — Dr/Ing Mohamed Harbi
+          <br />
+          A la prochaine, peut-être. allah wa3lem.
         </span>
 
         <style>{`
