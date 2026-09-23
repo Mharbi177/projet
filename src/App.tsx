@@ -267,7 +267,11 @@ function ChapterActions({
         <span>Back</span>
       </button>
       {!isFinal && <ContinueButton onClick={onNext} />}
- function ChapterContent({
+    </nav>
+  );
+}
+
+function ChapterContent({
   chapter,
   finalRevealed,
   dismissed,
@@ -397,9 +401,6 @@ function ChapterActions({
         </section>
       );
     default:
-      return null;
-  }
-}ult:
       return null;
   }
 }
